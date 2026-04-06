@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/x-icon" href="img/favicon-dark.ico" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/x-icon" href="img/favicon-light.ico" media="(prefers-color-scheme: dark)">
+    <title>Tempus</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Menu Bar -->
+<div class="main-nav-bar">
+    <div class="main-menu-item">
+        <a href="#" data-page="partials/timesheet.html" data-js="js/timesheet.js" data-init="TimesheetPage.init">Timesheet</a>
+    </div>
+    <div class="main-menu-item">
+        <a class="main-dropdown-toggle">Tools</a>
+        <div class="main-dropdown-content">
+            <a data-menu-item="insert_favorites" data-menu-item-group="timesheet" data-action="insert_favorites">Insert favorites</a>
+            <div data-menu-item-group="timesheet" class="main-dropdown-divider"></div>
+            <a data-menu-item="import_week_quinyx" data-menu-item-group="" data-action="import_week_quinyx">Import from Quinyx</a>
+            <a data-menu-item="export_week_quinyx" data-menu-item-group="timesheet" data-action="export_week_quinyx">Export Week to Quinyx</a>
+            <div data-menu-item-group="" class="main-dropdown-divider"></div>
+            <a href="#" data-page="partials/report.html" data-js="js/report.js" data-init="ReportPage.init">Report</a>
+            <div data-menu-item-group="" class="main-dropdown-divider"></div>
+            <a href="#" data-action="insert_danish_holidays">Insert Danish holidays</a>
+            <div data-menu-item-group="" class="main-dropdown-divider"></div>
+            <a href="#" data-action="export_db">Export Database</a>
+            <a href="#" data-action="import_db">Import Database</a>
+            <div class="main-dropdown-divider"></div>
+            <a href="#" data-action="clear_db">Clear Database</a>
+        </div>
+    </div>
+    <div class="main-menu-item">
+        <a class="main-dropdown-toggle">Help</a>
+        <div class="main-dropdown-content">
+            <a href="#" data-page="partials/setup.html" data-js="js/setup.js" data-init="SetupPage.init">Setup</a>
+            <div class="main-dropdown-divider"></div>
+            <a href="#" data-page="partials/about.html" data-js="" data-init="">About</a>
+        </div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="body-content" id="main-content">
+    <div style="width: 100%; height: calc(100vh - 60px); display: flex; justify-content: center; align-items: center;">
+        <img src="img/tempus-logo.jpg" alt="Tempus" style="max-width: 800px; max-height: 100%; object-fit: contain;">
+    </div>
+</div>
+
+<!-- Loader -->
+<div id="loader-overlay" class="loader-overlay hidden">
+    <div class="loader-spinner"></div>
+</div>
+
+<!-- JavaScript -->
+<script src="js/loader.js"></script>
+<script src="js/framework.js"></script>
+<script src="js/actions.js"></script>
+<script src="js/database.js"></script>
+<script src="js/helper.js"></script>
+<script src="js/tools.js"></script>
+<script src="js/backup-restore.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

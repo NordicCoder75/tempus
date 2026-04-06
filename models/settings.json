@@ -1,0 +1,39 @@
+{
+  "index": [
+  ],
+  "fields": [
+    {
+      "data-idb-key": "employee-id"
+    },
+    {
+      "data-idb-key": "internal-shift"
+    },
+    {
+      "data-idb-key": "project-shift"
+    },
+    {
+      "data-idb-key": "export-format"
+    },
+    {
+      "data-idb-key": "monday-hours"
+    },
+    {
+      "data-idb-key": "tuesday-hours"
+    },
+    {
+      "data-idb-key": "wednesday-hours"
+    },
+    {
+      "data-idb-key": "thursday-hours"
+    },
+    {
+      "data-idb-key": "friday-hours"
+    },
+    {
+      "data-idb-key": "saturday-hours"
+    },
+    {
+      "data-idb-key": "sunday-hours"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+<main class="timesheet">
+    <table id="timesheet" data-idb-store="timesheet">
+        <colgroup>
+            <col class="timesheet-col-wide"/>  <!-- Project -->
+            <col class="timesheet-col-wide"/>  <!-- Name -->
+            <col class="timesheet-col-narrow"/>  <!-- Monday Hours -->
+            <col class="timesheet-col-wide"/>  <!-- Monday Description -->
+            <col class="timesheet-col-narrow"/>  <!-- Tuesday Hours -->
+            <col class="timesheet-col-wide"/>  <!-- Tuesday Description -->
+            <col class="timesheet-col-narrow"/>  <!-- Wednesday Hours -->
+            <col class="timesheet-col-wide"/>  <!-- Wednesday Description -->
+            <col class="timesheet-col-narrow"/>  <!-- Thursday Hours -->
+            <col class="timesheet-col-wide"/>  <!-- Thursday Description -->
+            <col class="timesheet-col-narrow"/>  <!-- Friday Hours -->
+            <col class="timesheet-col-wide"/>  <!-- Friday Description -->
+            <col class="timesheet-col-narrow"/>  <!-- Saturday Hours -->
+            <col class="timesheet-col-wide"/>  <!-- Saturday Description -->
+            <col class="timesheet-col-narrow"/>  <!-- Sunday Hours -->
+            <col class="timesheet-col-wide"/>  <!-- Sunday Description -->
+            <col class="timesheet-col-narrow"/>  <!-- Totals -->
+        </colgroup>
+        <thead>
+        <tr>
+            <!-- 8 header cells spanning 2 columns each -->
+            <th colspan="2" class="timesheet-week-header">
+                <div class="timesheet-week-header-container">
+                    <button class="timesheet-btn" id="timesheet-calendar-btn">&#128197;</button>
+                    <span id="timesheet-period">dd-MM-yyyy - dd-MM-yyyy (Week #)</span>
+                    <!-- Calendar Start -->
+                    <div id="calendar-container" class="calendar-container">
+                        <div class="calendar">
+                            <div class="calendar-nav">
+                                <div class="calendar-nav-left">
+                                    <button onclick="changeDate(-1, 'year')">&laquo;&laquo;</button>
+                                    <button onclick="changeDate(-1, 'month')">&laquo;</button>
+                                </div>
+                                <div class="calendar-nav-center" id="calendar-current-month"></div>
+                                <div class="calendar-nav-right">
+                                    <button onclick="changeDate(1, 'month')">&raquo;</button>
+                                    <button onclick="changeDate(1, 'year')">&raquo;&raquo;</button>
+                                </div>
+                            </div>
+
+                            <table id="calendar-week-table" class="calendar">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>M</th>
+                                    <th>T</th>
+                                    <th>W</th>
+                                    <th>T</th>
+                                    <th>F</th>
+                                    <th class="calendar-weekend">S</th>
+                                    <th class="calendar-weekend">S</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <!-- Dynamic rows go here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Calendar End -->
+                    <div>
+                        <button class="timesheet-btn" id="timesheet-prev-week-btn">&#9664;</button>
+                        <button class="timesheet-btn" id="timesheet-next-week-btn">&#9654;</button>
+                    </div>
+                </div>
+            </th>
+            <th colspan="2" class="timesheet-day-header">Monday</th>
+            <th colspan="2" class="timesheet-day-header">Tuesday</th>
+            <th colspan="2" class="timesheet-day-header">Wednesday</th>
+            <th colspan="2" class="timesheet-day-header">Thursday</th>
+            <th colspan="2" class="timesheet-day-header">Friday</th>
+            <th colspan="2" class="timesheet-day-header">Saturday</th>
+            <th colspan="2" class="timesheet-day-header">Sunday</th>
+            <!-- Last header cell spanning 1 column -->
+            <th class="timesheet-total-header">Totals</th>
+        </tr>
+        <tr>
+            <!-- Second header row with explicit labels -->
+            <th>Project</th>
+            <th>Name</th>
+
+            <!-- Repeat 7 times: Hours + Description -->
+            <th class="timesheet-day-header">Hours</th>
+            <th>Description</th>
+            <th class="timesheet-day-header">Hours</th>
+            <th>Description</th>
+            <th class="timesheet-day-header">Hours</th>
+            <th>Description</th>
+            <th class="timesheet-day-header">Hours</th>
+            <th>Description</th>
+            <th class="timesheet-day-header">Hours</th>
+            <th>Description</th>
+            <th class="timesheet-day-header">Hours</th>
+            <th>Description</th>
+            <th class="timesheet-day-header">Hours</th>
+            <th>Description</th>
+
+            <th>Hours</th> <!-- Totals column has no label here -->
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Rows with 17 columns each -->
+        </tbody>
+    </table>
+</main>

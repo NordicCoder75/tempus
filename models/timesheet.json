@@ -1,0 +1,110 @@
+{
+  "index": [
+    {
+      "name": "year-week-idx",
+      "fields": [
+        "year",
+        "week"
+      ],
+      "unique": false,
+      "primary": true
+    }
+  ],
+  "fields": [
+    {
+      "contenteditable": "false",
+      "data-idb-key": "year",
+      "data-method": "getCurrentDayYearNumber",
+      "style": "display:none;"
+    },
+    {
+      "contenteditable": "false",
+      "data-idb-key": "week",
+      "data-method": "getCurrentDayWeekNumber",
+      "style": "display:none;"
+    },
+    {
+      "contenteditable": "true",
+      "data-idb-key": "projectId"
+    },
+    {
+      "contenteditable": "true",
+      "data-idb-key": "projectName"
+    },
+    {
+      "contenteditable": "true",
+      "data-idb-key": "mondayHours",
+      "type": "number",
+      "style": "text-align: center;"
+    },
+    {
+      "contenteditable": "true",
+      "data-idb-key": "mondayDesc"
+    },
+    {
+      "contenteditable": "true",
+      "data-idb-key": "tuesdayHours",
+      "type": "number",
+      "style": "text-align: center;"
+    },
+    {
+      "contenteditable": "true",
+      "data-idb-key": "tuesdayDesc"
+    },
+    {
+      "contenteditable": "true",
+      "data-idb-key": "wednesdayHours",
+      "type": "number",
+      "style": "text-align: center;"
+    },
+    {
+      "contenteditable": "true",
+      "data-idb-key": "wednesdayDesc"
+    },
+    {
+      "contenteditable": "true",
+      "data-idb-key": "thursdayHours",
+      "type": "number",
+      "style": "text-align: center;"
+    },
+    {
+      "contenteditable": "true",
+      "data-idb-key": "thursdayDesc"
+    },
+    {
+      "contenteditable": "true",
+      "data-idb-key": "fridayHours",
+      "type": "number",
+      "style": "text-align: center;"
+    },
+    {
+      "contenteditable": "true",
+      "data-idb-key": "fridayDesc"
+    },
+    {
+      "contenteditable": "true",
+      "data-idb-key": "saturdayHours",
+      "type": "number",
+      "style": "text-align: center;"
+    },
+    {
+      "contenteditable": "true",
+      "data-idb-key": "saturdayDesc"
+    },
+    {
+      "contenteditable": "true",
+      "data-idb-key": "sundayHours",
+      "type": "number",
+      "style": "text-align: center;"
+    },
+    {
+      "contenteditable": "true",
+      "data-idb-key": "sundayDesc"
+    },
+    {
+      "contenteditable": "false",
+      "data-idb-key": "total",
+      "style": "text-align: center;"
+    }
+  ]
+}

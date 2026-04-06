@@ -1,0 +1,22 @@
+{
+  "index": [
+    {
+      "name": "projectId-idx",
+      "fields": [
+        "projectId"
+      ],
+      "unique": false,
+      "primary": true
+    }
+  ],
+  "fields": [
+    {
+      "contenteditable": "true",
+      "data-idb-key": "projectId"
+    },
+    {
+      "contenteditable": "true",
+      "data-idb-key": "projectName"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+<main class="setup">
+    <div class="panel-container">
+
+        <!-- =================== Parameters =================== -->
+        <section class="panel">
+            <div class="panel-title">Parameters</div>
+            <div id="parameters" class="parameters" data-id="1" data-idb-store="setup">
+                <div class="col-3">
+                    <label for="employee-id">Employee ID</label>
+                    <input id="employee-id" data-idb-key="employeeId" placeholder="e.g., 10000" required/>
+                </div>
+                <div class="col-4">
+                    <label for="internal-shift">Internal Time Shift</label>
+                    <input id="internal-shift" data-idb-key="internalShift" placeholder="e.g., DK: Working time"/>
+                </div>
+                <div class="col-4">
+                    <label for="project-shift">Project Time Shift</label>
+                    <input id="project-shift" data-idb-key="projectShift" placeholder="e.g., Project time"/>
+                </div>
+                <div class="col-12">
+                    <label for="export-format">Export File Format</label>
+                    <input id="export-format" data-idb-key="exportFormat" placeholder="e.g., {employeeId}_{week}_{dateTime}.csv"/>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================== Default Work Week =================== -->
+        <section class="panel">
+            <div class="panel-title">Default Work Week</div>
+            <div class="table-wrap">
+                <table id="schedule" class="schedule" data-id="1" data-idb-store="setup">
+                    <thead>
+                    <tr>
+                        <th scope="col"><label for="monday">Monday</label></th>
+                        <th scope="col"><label for="tuesday">Tuesday</label></th>
+                        <th scope="col"><label for="wednesday">Wednesday</label></th>
+                        <th scope="col"><label for="thursday">Thursday</label></th>
+                        <th scope="col"><label for="friday">Friday</label></th>
+                        <th scope="col"><label for="saturday">Saturday</label></th>
+                        <th scope="col"><label for="sunday">Sunday</label></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><input type="number" id="monday" data-idb-key="mondayHours" min="0" max="24" step="0.5" placeholder="7.40"/></td>
+                        <td><input type="number" id="tuesday" data-idb-key="tuesdayHours" min="0" max="24" step="0.5" placeholder="7.40"/></td>
+                        <td><input type="number" id="wednesday" data-idb-key="wednesdayHours" min="0" max="24" step="0.5" placeholder="7.40"/></td>
+                        <td><input type="number" id="thursday" data-idb-key="thursdayHours" min="0" max="24" step="0.5" placeholder="7.40"/></td>
+                        <td><input type="number" id="friday" data-idb-key="fridayHours" min="0" max="24" step="0.5" placeholder="7.40"/></td>
+                        <td><input type="number" id="saturday" data-idb-key="saturdayHours" min="0" max="24" step="0.5" placeholder="0.00"/></td>
+                        <td><input type="number" id="sunday" data-idb-key="sundayHours" min="0" max="24" step="0.5" placeholder="0.00"/></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p id="week-help" class="table-hint">Enter hours as decimal values (0.00 – 24.00). Two decimals allowed.</p>
+        </section>
+
+        <!-- =================== Favorite Projects =================== -->
+        <section class="panel">
+            <div class="panel-title">Favorite Projects</div>
+            <div class="table-wrap">
+                <table id="favorites" class="favorites" data-idb-store="favorites"
+                       data-idb-keypath="id" data-idb-type="dynamic">
+                    <thead>
+                    <tr>
+                        <th scope="col">Project ID</th>
+                        <th scope="col">Project Name</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Dynamic rows go here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</main>

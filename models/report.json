@@ -1,0 +1,87 @@
+{
+  "index": [
+    {
+      "name": "projectId-idx",
+      "fields": [
+        "projectId"
+      ],
+      "unique": false,
+      "primary": true
+    }
+  ],
+  "fields": [
+    {
+      "contenteditable": "true",
+      "data-idb-key": "projectId"
+    },
+    {
+      "contenteditable": "false",
+      "data-idb-key": "projectName"
+    },
+    {
+      "contenteditable": "false",
+      "data-idb-key": "januaryHours",
+      "style": "text-align: center;"
+    },
+    {
+      "contenteditable": "false",
+      "data-idb-key": "februaryHours",
+      "style": "text-align: center;"
+    },
+    {
+      "contenteditable": "false",
+      "data-idb-key": "marchHours",
+      "style": "text-align: center;"
+    },
+    {
+      "contenteditable": "false",
+      "data-idb-key": "aprilHours",
+      "style": "text-align: center;"
+    },
+    {
+      "contenteditable": "false",
+      "data-idb-key": "mayHours",
+      "style": "text-align: center;"
+    },
+    {
+      "contenteditable": "false",
+      "data-idb-key": "juneHours",
+      "style": "text-align: center;"
+    },
+    {
+      "contenteditable": "false",
+      "data-idb-key": "julyHours",
+      "style": "text-align: center;"
+    },
+    {
+      "contenteditable": "false",
+      "data-idb-key": "augustHours",
+      "style": "text-align: center;"
+    },
+    {
+      "contenteditable": "false",
+      "data-idb-key": "septemberHours",
+      "style": "text-align: center;"
+    },
+    {
+      "contenteditable": "false",
+      "data-idb-key": "octoberHours",
+      "style": "text-align: center;"
+    },
+    {
+      "contenteditable": "false",
+      "data-idb-key": "novemberHours",
+      "style": "text-align: center;"
+    },
+    {
+      "contenteditable": "false",
+      "data-idb-key": "decemberHours",
+      "style": "text-align: center;"
+    },
+    {
+      "contenteditable": "false",
+      "data-idb-key": "total",
+      "style": "text-align: center;"
+    }
+  ]
+}
