@@ -55,19 +55,18 @@ async function insert_danish_holidays() {
         const setup = await getRecordByKey('setup', 1);
 
         for (const [holidayName, holidayDate] of Object.entries(holidays)) {
+            const weekYear = getWeekYearNumber(holidayDate);
             const week = getWeekNumber(holidayDate);
-            const weekdayName = getWeekdayName(holidayDate);
-            const weekdayHours = Number(setup[weekdayName]);
+            const weekdayHoursName = getWeekdayHoursName(holidayDate);
+            const weekdayHours = Number(setup[weekdayHoursName]);
 
             const row = await createRowFromModel("timesheet", true);
-            row.querySelector('[data-idb-key="year"]').textContent = year;
-            row.querySelector('[data-idb-key="week"]').textContent = week;
+            row.querySelector('[data-idb-key="year"]').textContent = String(weekYear);
+            row.querySelector('[data-idb-key="week"]').textContent = String(week);
             row.querySelector('[data-idb-key="projectId"]').textContent = "";
             row.querySelector('[data-idb-key="projectName"]').textContent = holidayName;
-            row.querySelector('[data-idb-key="' + weekdayName + '"]').textContent = weekdayHours;
+            row.querySelector('[data-idb-key="' + weekdayHoursName + '"]').textContent = Number(weekdayHours).toFixed(2);
             await updateRecordByKey("timesheet", Number(row.dataset.id), row);
-
-            console.log(holidayName + ':' + holidayDate + ':' + 7.4);
         }
     }
 }

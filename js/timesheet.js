@@ -48,7 +48,8 @@ async function updateWeekHeader() {
     sunday = new Date(monday);
     sunday.setDate(monday.getDate() + 6);
 
-    weekHeader.textContent = `${formatDate(monday)} - ${formatDate(sunday)} (Week ${weekNum})`;
+    //weekHeader.textContent = `${formatDate(monday)} - ${formatDate(sunday)} (Week ${weekNum})`;
+    weekHeader.textContent = `Week ${weekNum} - ${getWeekYearNumber(monday)}`;
 
     await updateTimesheetDayHeaders(monday); // somewhat of a hack, but it works !
 
@@ -263,14 +264,14 @@ function onAfterCellOnChangedEvent(cell) {
         const td = event.target;
 
         if (td.hasAttribute("type") && td.getAttribute("type") === "number") {
-            await updateTotal(td); // Update totals row
+            updateTotal(td); // Update totals row
         }
     });
 
 }
 
 async function onAfterLoadTableRow(row) {
-    await updateTotal(row); // Update totals row
+    updateTotal(row); // Update totals row
 }
 
 async function updateTimesheetDayHeaders(mondayDate) {

@@ -141,6 +141,7 @@ async function updateRowFromRecord(row, record) {
         const fieldName = cell.getAttribute("data-idb-key");
         if (fieldName && record.value[fieldName] !== undefined) {
             cell.textContent = record.value[fieldName];
+            cell.title = cell.textContent;
         }
     }
 }
@@ -203,6 +204,8 @@ function cellOnChangedEvent(cell) {
             const colName = td.getAttribute("data-idb-key");
 
             await updateRecordFieldByKey(entityName, key, colName, newValue);
+
+            td.title = newValue;
         }
 
         // Delete empty row
@@ -221,6 +224,13 @@ function cellOnChangedEvent(cell) {
 
     // If input in last row, insert next row (and enforce numeric check on any input
     const inputHandler = async e => {
+        // First part is about right/left scrolling when editing
+        const cell = e.target.closest('[data-idb-key]');
+        if (cell) {
+            scrollToCaret(cell);
+        }
+
+        // Now the rest...
         const td = e.target;
 
         if (td.getAttribute("type") === "number") {
@@ -272,12 +282,30 @@ function cellOnChangedEvent(cell) {
         selection.collapseToEnd();
 
         await handleLastRow(td);
-    }
+    };
+
+    const focusinHandler = async e => {
+        const cell = e.target.closest('[data-idb-key]');
+        if (cell) {
+            cell.classList.add('editing');
+        }
+    };
+
+    const focusoutHandler = async e => {
+        const cell = e.target.closest('[data-idb-key]');
+        if (cell) {
+            cell.classList.remove('editing');
+            cell.title = cell.textContent;
+            cell.scrollLeft = 0;
+        }
+    };
 
     cell.addEventListener("focus", focusHandler);
     cell.addEventListener("blur", blurHandler);
     cell.addEventListener("input", inputHandler);
     cell.addEventListener("paste", pasteHandler);
+    cell.addEventListener('focusin', focusinHandler);
+    cell.addEventListener("focusout", focusoutHandler);
 
     // Add extendability functions
     if (typeof window.onAfterCellOnChangedEvent === "function") {
@@ -288,7 +316,27 @@ function cellOnChangedEvent(cell) {
         focusHandler,
         blurHandler,
         inputHandler,
-        pasteHandler
+        pasteHandler,
+        focusinHandler,
+        focusoutHandler
+    }
+}
+
+function scrollToCaret(element) {
+    const selection = window.getSelection();
+    if (!selection.rangeCount) return;
+
+    const range = selection.getRangeAt(0).cloneRange();
+    range.collapse(true);
+
+    const rect = range.getBoundingClientRect();
+    const elRect = element.getBoundingClientRect();
+
+    // If caret is outside visible area → scroll
+    if (rect.right > elRect.right) {
+        element.scrollLeft += rect.right - elRect.right;
+    } else if (rect.left < elRect.left) {
+        element.scrollLeft -= elRect.left - rect.left;
     }
 }
 
@@ -314,12 +362,26 @@ async function handleLastRow(td) {
 }
 
 function normalizeNumberText(text) {
+    // Replace comma with dot
     text = text.replace(/,/g, '.');
-    text = text.replace(/[^0-9.]/g, '');
 
+    // Allow digits, dot, and minus
+    text = text.replace(/[^0-9.-]/g, '');
+
+    // Handle minus: only allow one, and only at the start
+    const isNegative = text.startsWith('-');
+    text = text.replace(/-/g, '');
+    if (isNegative) {
+        text = '-' + text;
+    }
+
+    // Split decimal parts
     const parts = text.split('.');
-    if (parts.length > 2) {
-        text = parts[0] + '.' + parts.slice(1).join('');
+
+    if (parts.length > 1) {
+        const integerPart = parts[0];
+        const decimalPart = parts.slice(1).join('').slice(0, 2);
+        return integerPart + '.' + decimalPart;
     }
 
     return text;

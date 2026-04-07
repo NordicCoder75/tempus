@@ -283,6 +283,7 @@ async function updateTotalRow() {
         const workingPct = (availableHours !== 0 ? workingHours / availableHours : 0);
 
         cell.textContent = `${Number(workingHours).toFixed(2)} / ${Number(availableHours).toFixed(2)} (${Number(workingPct * 100).toFixed(0)}%)`;
+        cell.title = cell.textContent;
     }
 }
 

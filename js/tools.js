@@ -67,7 +67,7 @@ function getWeekDates(year, week) {
     return days;
 }
 
-function getWeekdayName(date) {
+function getWeekdayHoursName(date) {
     const days = [
         "sundayHours", "mondayHours", "tuesdayHours",
         "wednesdayHours", "thursdayHours", "fridayHours", "saturdayHours"

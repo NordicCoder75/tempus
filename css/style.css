@@ -95,6 +95,8 @@ body {
 table {
     border-collapse: collapse;
     width: 100%;
+
+    table-layout: fixed;
 }
 table th,
 table td {
@@ -102,11 +104,29 @@ table td {
     padding: 4px;
     text-align: left;
     vertical-align: middle;
+
+    white-space: nowrap;
 }
 table th {
     background-color: var(--light-gray);
     color: var(--dark-gray);
     font-weight: bold;
+}
+td[data-idb-key] {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+td[data-idb-key].editing {
+    overflow-x: auto;
+    overflow-y: hidden;
+    text-overflow: unset;
+
+    /* hide scrollbar (cross-browser) */
+    scrollbar-width: none;       /* Firefox */
+}
+td[data-idb-key].editing::-webkit-scrollbar {
+    display: none;               /* Chrome/Safari */
 }
 table input {
     width: 100%;
