@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tempus - Setup</title>
+
+    <link rel="stylesheet" href="../vendor/css/tabulator.min.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/pages/setup.css">
+</head>
+<body>
+
+<div class="settings-page">
+
+    <section class="panel">
+        <h2>Parameters</h2>
+
+        <div class="form-grid">
+            <div class="field">
+                <label for="employeeId">Employee ID</label>
+                <input id="employeeId" />
+            </div>
+
+            <div class="field">
+                <label for="internalTimeShift">Internal Time Shift</label>
+                <select id="internalTimeShift"></select>
+            </div>
+
+            <div class="field">
+                <label for="projectTimeShift">Project Time Shift</label>
+                <select id="projectTimeShift"></select>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <h2>Default Work Week</h2>
+        <div id="workWeekTable"></div>
+        <p style="margin-top:10px;font-size:13px;color:#cfcfcf;">
+            Enter hours as decimal values (0.00–24.00). Two decimals allowed.
+        </p>
+    </section>
+
+    <section class="panel projects-panel">
+        <h2>Favorite Projects</h2>
+        <div id="favoritesTable"></div>
+    </section>
+
+</div>
+
+<script type="text/javascript" src="../vendor/js/tabulator.min.js"></script>
+<script type="module" src="../js/pages/setup.js"></script>
+
+</body>
+</html>

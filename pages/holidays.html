@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tempus - Holidays</title>
+
+    <link rel="stylesheet" href="../vendor/css/tabulator.min.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/pages/setup.css">
+    <link rel="stylesheet" href="../css/pages/holidays.css">
+</head>
+<body>
+
+<div class="holiday-page">
+
+    <section class="panel">
+        <h2>Holiday Setup</h2>
+
+        <div class="holiday-form-grid">
+            <div class="field">
+                <label for="country">Country</label>
+                <select id="country">
+                    <option value="DK">Danmark</option>
+                    <option value="SE">Sweden</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="year">Year</label>
+                <input id="year" type="number" min="1900" max="2100" step="1" value="2000">
+            </div>
+
+            <button id="generateButton" class="holiday-button" type="button">Generate</button>
+
+            <button id="insertButton" class="holiday-button" type="button">Insert</button>
+        </div>
+    </section>
+
+    <section class="panel holiday-table-panel">
+        <h2>Holidays</h2>
+        <div id="holidayTable"></div>
+    </section>
+
+</div>
+
+<script type="text/javascript" src="../vendor/js/tabulator.min.js"></script>
+<script type="module" src="../js/pages/holidays.js"></script>
+
+</body>
+</html>

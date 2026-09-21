@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Select date</title>
+
+    <link rel="stylesheet" href="../css/pages/calendar.css">
+</head>
+
+<body>
+
+<div class="calendar">
+
+    <div class="calendar-header">
+        <button class="nav-button" id="prevMonth" type="button">&lt;</button>
+
+        <h2 id="monthYear">01-01-1900</h2>
+
+        <button class="nav-button" id="nextMonth" type="button">&gt;</button>
+    </div>
+
+    <div class="weekdays">
+        <div class="week-number-header"></div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+        <div>Sun</div>
+    </div>
+
+    <div class="days" id="calendarDays"></div>
+
+</div>
+
+<script type="module" src="../js/pages/calendar.js"></script>
+
+</body>
+</html>

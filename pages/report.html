@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tempus - Report</title>
+
+    <link rel="stylesheet" href="../vendor/css/tabulator.min.css">
+    <link rel="stylesheet" href="../css/pages/report.css">
+</head>
+<body>
+
+<div class="report-page">
+
+    <section class="panel report-header-panel">
+        <div class="report-toolbar">
+            <div>
+                <h2>Monthly Hours Report</h2>
+                <p>Hours registered per project for the selected year.</p>
+            </div>
+
+            <div class="field year-field">
+                <label for="reportYear"></label>
+                <select id="reportYear"></select>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel report-table-panel">
+        <div id="reportTable"></div>
+    </section>
+
+</div>
+
+<script type="text/javascript" src="../vendor/js/tabulator.min.js"></script>
+<script type="module" src="../js/pages/report.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+}
+
+.calendar {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    border: 1px solid #cfcfcf;
+    padding: 8px;
+    background: #f8f8f8;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 34px;
+    border: 1px solid #d0d0d0;
+    background: #eeeeee;
+}
+
+.calendar-header h2 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: normal;
+    color: #444;
+}
+
+.nav-button {
+    width: 36px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background: #dddddd;
+}
+
+.weekdays,
+.days {
+    display: grid;
+    grid-template-columns: 32px repeat(7, minmax(0, 1fr));
+    width: 100%;
+    gap: 0;
+}
+
+.weekdays div {
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: normal;
+    border-right: 1px solid #d8d8d8;
+    border-bottom: 1px solid #d8d8d8;
+    background: #f4f4f4;
+}
+
+.week-number-header {
+    background: #e6e6e6 !important;
+}
+
+.weekdays div:nth-child(7),
+.weekdays div:nth-child(8) {
+    background: #e7e7e7;
+}
+
+.day {
+    border: none;
+    border-right: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    background: #fafafa;
+    height: 32px;
+    border-radius: 0;
+    font-size: 12px;
+    color: #333;
+    cursor: pointer;
+}
+
+.day:hover {
+    background: #e6e6e6;
+}
+
+.day.weekend {
+    background: #eeeeee;
+}
+
+.day.weekend:hover {
+    background: #dddddd;
+}
+
+.day.selected-week:hover {
+    background: #efd994;
+}
+
+.day.today:hover {
+    background: #bcd9f0;
+}
+
+.day.today.selected-week:hover {
+    background: #a7cbb9;
+}
+
+.week-number {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eeeeee;
+    border-right: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    border-radius: 0;
+    color: #555;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.day.selected-week {
+    background: #f6e7b8;
+}
+
+.day.today {
+    font-weight: bold;
+    background: #cfe3f5;
+}
+
+.day.today.selected-week {
+    background: #b9d7c9;
+    font-weight: bold;
+}
+
+.empty {
+    visibility: visible;
+    height: 32px;
+    background: #f1f1f1;
+    border-right: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+}
+
+.day.outside-month {
+    color: #aaa;
+    background: #f1f1f1;
+}
+
+.day.outside-month.weekend {
+    background: #e8e8e8;
+}
+
+.day.outside-month:hover {
+    color: #555;
+    background: #e2e2e2;
+}

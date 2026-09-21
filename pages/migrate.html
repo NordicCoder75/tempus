@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IndexedDB JSON to Transformed Excel</title>
+
+    <script src="../vendor/js/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="../css/pages/migrate.css">
+</head>
+
+<body>
+<main>
+    <h1>IndexedDB JSON to Excel</h1>
+
+    <p>
+        Upload an IndexedDB JSON export. The file is first converted into an Excel workbook,
+        then the workbook transformations are applied automatically
+        so that it can be imported into Tempus via the Excel import tool.
+    </p>
+
+    <a href="../migration-guide.pdf" target="_blank" rel="noopener noreferrer">Migration Guide</a>
+
+    <div id="dropZone" class="drop-zone">
+        <strong>Drop a JSON file here</strong><br><br>
+        or click to select a file
+    </div>
+
+    <input id="fileInput" type="file" accept=".json,application/json"/>
+
+    <button id="exportButton" disabled>
+        Transform and Download Excel
+    </button>
+
+    <div id="status"></div>
+</main>
+
+<script type="module" src="../js/pages/migrate.js"></script>
+
+</body>
+</html>

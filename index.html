@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tempus</title>
+
+    <link rel="stylesheet" href="./vendor/css/tabulator.min.css">
+    <link rel="stylesheet" href="./vendor/css/winbox.min.css">
+
+    <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+
+<div class="topbar">
+
+    <div class="menubar">
+
+        <button class="menu-button action" data-action="openTimesheet">Timesheet</button>
+
+        <div class="menu">
+            <button class="menu-button">Tools</button>
+
+            <div class="dropdown">
+                <div class="data-menu-item" data-action="insertFavorites">Insert Favorites</div>
+                <div class="data-menu-item-separator"></div>
+                <div class="data-menu-item has-sub">Import from ...
+                    <div class="submenu">
+                        <div class="data-menu-item" data-action="importFromQuinyx">Quinyx</div>
+                        <div class="data-menu-item-separator"></div>
+                        <div class="data-menu-item" data-action="importFromExcel">Excel</div>
+                    </div>
+                </div>
+                <div id="timesheet-export" class="data-menu-item has-sub">Export to ...
+                    <div class="submenu">
+                        <div class="data-menu-item" data-action="exportToQuinyx">Quinyx</div>
+                        <div class="data-menu-item-separator"></div>
+                        <div class="data-menu-item" data-action="exportToExcel">Excel</div>
+                    </div>
+                </div>
+                <div class="data-menu-item-separator"></div>
+                <div class="data-menu-item" data-action="showReport">Report</div>
+                <div class="data-menu-item-separator"></div>
+                <div class="data-menu-item" data-action="insertHolidays">Insert Holidays</div>
+                <div class="data-menu-item-separator"></div>
+
+                <div class="data-menu-item has-sub">Database
+                    <div class="submenu">
+                        <div class="data-menu-item" data-action="migrateDatabase">Migrate</div>
+                        <div class="data-menu-item-separator"></div>
+                        <div class="data-menu-item" data-action="clearDatabase">Clear</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu">
+            <button class="menu-button">Help</button>
+
+            <div class="dropdown">
+                <div class="data-menu-item" data-action="showSetup">Setup</div>
+                <div class="data-menu-item-separator"></div>
+                <div class="data-menu-item" data-action="showAbout">About</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="loginBtn" class="data-menu-item login-button" data-action="doLogin">Login</div>
+
+</div>
+
+<main>
+    <div id="logoContainer" style="width: 100%; height: calc(100vh - 42px); display: flex; justify-content: center; align-items: center;">
+        <img src="./img/tempus-logo.jpg" alt="Tempus" style="max-width: 800px; max-height: 100%; object-fit: contain;">
+    </div>
+
+    <div id="timeTable"></div>
+</main>
+
+<div id="overlay" class="overlay hidden"></div>
+
+<script type="text/javascript" src="./vendor/js/tabulator.min.js"></script>
+<script type="text/javascript" src="./vendor/js/winbox.min.js"></script>
+<script type="text/javascript" src="./vendor/js/xlsx.full.min.js"></script>
+
+<script type="module" src="./js/main.js"></script>
+
+</body>
+</html>

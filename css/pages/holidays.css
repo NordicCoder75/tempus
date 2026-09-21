@@ -1,0 +1,72 @@
+.holiday-page {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 12px;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.holiday-page label,
+.holiday-page input,
+.holiday-page select,
+.holiday-page button {
+    font-size: 16px;
+}
+
+.holiday-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 120px 120px;
+    gap: 12px;
+    align-items: end;
+}
+
+.holiday-page .field input,
+.holiday-page .field select {
+    width: 100%;
+    min-width: 0;
+    height: 36px;
+}
+
+.holiday-button {
+    width: 100%;
+    height: 36px;
+    padding: 0 18px;
+    background: #ffffff;
+    color: #222222;
+    border: 1px solid #999999;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.holiday-button:hover {
+    background: #f2f2f2;
+}
+
+.holiday-button:active {
+    transform: translateY(1px);
+}
+
+.holiday-table-panel {
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+#holidayTable {
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+}
+
+@media (max-width: 760px) {
+    .holiday-form-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .holiday-button {
+        width: 100%;
+    }
+}
